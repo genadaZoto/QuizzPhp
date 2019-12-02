@@ -41,9 +41,9 @@
                                 </select><br>
                                 <label>Poser votre question</label><textarea type="text" name="TextQuestion"></textarea>
                             <p>Cochez seulement la bonne réponse:</p>
-                            <label>Entrez la première reponse</label><input name="reponse1" type="text" ><input type="radio"  name="inputAnswer" value="1"><br>
-                            <label>Entrez la deuxième reponse</label><input  name="reponse2" type="text" ><input type="radio"  name="inputAnswer" value="2"><br>
-                            <label>Entrez la troisième reponse</label><input name="reponse3"  type="text" ><input type="radio"  name="inputAnswer" value="3"><br>
+                            <p><label>Entrez la première reponse </label><input name="reponse1" type="text" ><input type="radio"  name="inputAnswer" value="1"></p>
+                            <p><label>Entrez la deuxième reponse</label><input  name="reponse2" type="text" ><input type="radio"  name="inputAnswer" value="2"></p>
+                            <p><label>Entrez la troisième reponse</label><input name="reponse3"  type="text" ><input type="radio"  name="inputAnswer" value="3"></p>
                             <button type="submit">Submit</button>
 ​                        </form>
                     </div>

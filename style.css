@@ -1,15 +1,15 @@
 body{
     margin:0;
     padding:0;
-    background-color: black;
+    background-color: #f2f2f2;
 }
 * {
     box-sizing: border-box;
 }
 header{
-    height:10%;
+    height:20%;
     background-color: black;
-    color:white;
+    color:red;
     text-align: center;
     font-size: 200%;
     padding-top:5%;
@@ -18,10 +18,9 @@ header{
   display:flex;
   flex-direction: row;
   justify-content: center;
-  width: 100%;
+  width: 60%;
   margin-right: auto;
   border-radius: 5px;
-  background-color: #f2f2f2;
   padding: 20px;
 }
 ul.list-inline{
@@ -42,7 +41,7 @@ ul.list-inline li{
 .row{
   display: flex;
   flex-wrap: wrap;
-  margin-left: 50%;
+  margin-left: 40%;
 }
 /*button{
   text-align: center;
@@ -60,7 +59,7 @@ ul.list-inline li{
   text-decoration: none ;
   padding: 0px;
 }*/
-input {
+input, select, textArea {
   width: 100%; /* Full width */
   padding: 12px; /* Some padding */ 
   border: 1px solid #ccc; /* Gray border */
@@ -68,10 +67,10 @@ input {
   box-sizing: border-box; /* Make sure that padding and width stays in place */
   margin-top: 6px; /* Add a top margin */
   margin-bottom: 16px; /* Bottom margin */
-  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+
 }
 button {
-  background-color: #red;
+  background-color:red;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -83,3 +82,7 @@ button:hover {
   background-color: #45a049;
 }
 
+form{
+    margin-left:30%;
+    line-height: 7%;
+}

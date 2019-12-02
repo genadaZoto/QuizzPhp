@@ -77,7 +77,7 @@
    
        foreach($question as $el) {
            print("<form action='./quizzTraitement2.php' method='POST'>");
-           print("<label name=Sujet".$el['IdSujet'].">".$el['TextQuestion']."</label><br>");
+           print("<h3><ol name=Sujet".$el['IdSujet'].">".$el['TextQuestion']."</ol></h3>");
            $sql3 ="SELECT TextReponse,IdQuestion, Vrai FROM `reponse` WHERE IdQuestion=:question_id";
            $statement3= $bdd->prepare($sql3);
            $statement3->bindValue(':question_id', $el['ID']);
@@ -87,12 +87,9 @@
                
               foreach($reponse as $rep) {
                   $value = $rep['Vrai']=="Vrai"? 1:0;
-                  print("<input type='radio'  name=Q".$rep['IdQuestion']." value=".$value."><label>".$rep['TextReponse']."</label><br>");
-            
+                  print("<p><input type='radio'  name=Q".$rep['IdQuestion']." value=".$value."><li>".$rep['TextReponse']."</li></p>");
               }
-              
            }
-           
        }
        print("<button type='submit'>Submit</button>");
        print("</form>");

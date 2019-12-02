@@ -38,7 +38,7 @@
                                 <label><option value="1">Js</option></label>
                                 <label><option value="2">PHP</option></label>
                                 <label><option value="html">HTML</option></label>
-                            </select>
+                            </select><br>
                             <button>Submit</button>
                         </form>
                     </div>

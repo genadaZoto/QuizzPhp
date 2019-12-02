@@ -57,7 +57,6 @@
             
         session_start();
         $sujet = $_SESSION["sujet"];
-        var_dump($sujet);
         
        $sql2 = "SELECT Id FROM `question`  WHERE IdSujet=:sujet";
        $statement= $bdd->prepare($sql2);
@@ -76,8 +75,22 @@
         foreach($question as $el) {
             $score +=$_POST["Q".$el['Id']];
         }
-         echo $score;
         
+        echo ("<h3>Vous avez eu: ").$score.(" points.</h3>");
+        
+        //insertion des données dans la table quizzUtilisateur
+        $idUtilisateur = $_SESSION["idUtilistaeur"];
+        $time = date("Y-m-d H:i:s");
+
+        
+        $sql3 = "INSERT INTO quizzutilisateur(Score, StartTime, IdUtilisateur, IdSujet) VALUES (:score, :time, :idUtilisateur, :sujet)";
+        $statement= $bdd->prepare($sql3);
+        $statement->bindValue(':score', $score);
+        $statement->bindValue(':time', $time);
+        $statement->bindValue(':idUtilisateur', $idUtilisateur);
+        $statement->bindValue(':sujet', $sujet);
+        $statement->execute();
+ 
         ?>
     </body>
 </html>

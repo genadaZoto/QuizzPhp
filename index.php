@@ -33,7 +33,7 @@
                 <div class="row">
                     <div class="col">
                         <form class="enregistrement" action="./utilisateurTraitement.php" method="POST">
-                            <label><h1>Enregistrez vous</h1></label><br>
+                            <label><h3>Enregistrez vous</h3></label><br>
                             <label>Nom <input type="text" name="nom"></label><br>
                             <label>Prenom<input type="text" name="prenom"> </label><br>
                             <label>Email<input type="email" name="email"></label><br>

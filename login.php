@@ -33,7 +33,7 @@
                 <div class="row">
                     <div class="col">
                         <form action="./utilisateurTraitement2.php" method="POST">
-                            <label><h1>Connectez vous</h1></label><br>
+                            <label><h3>Connectez vous</h3></label><br>
                             <label>Nom </label><input type="text" name="nom2"><br>
                             <label>Email </label><input type="email" name="email2"><br>
                             <label>Password </label><input type="password" name="password2"><br>
