@@ -54,7 +54,7 @@
                   die();
             }
         
-        $choix = 1; // $_POST['choix'];
+        $choix = $_POST['choix'];
     
    
         // deuxieme requete
@@ -87,7 +87,7 @@
                
               foreach($reponse as $rep) {
                   $value = $rep['Vrai']=="Vrai"? 1:0;
-                  print("<p><input type='radio'  name=Q".$rep['IdQuestion']." value=".$value."><li>".$rep['TextReponse']."</li></p>");
+                  print("<p><input type='radio'  name=Q".$rep['IdQuestion']." value=".$value."><li>".$rep['TextReponse']."</li>");
               }
            }
        }

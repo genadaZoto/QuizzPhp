@@ -57,14 +57,29 @@ and open the template in the editor.
         $password2 = $_POST['password2'];
         
         
+        
        $sql= "SELECT * FROM utilisateur WHERE Email= :email2 AND Password= :password2";
         $statement= $bdd->prepare($sql);
         $statement->bindValue(':email2', $email2);
         $statement->bindValue(':password2', $password2);
         
         if($statement->execute()){
+            $tableau =$statement ->fetchAll(PDO::FETCH_ASSOC);
+            $id = $tableau[0]["ID"];
             echo " Bonjour " . $nom2."! ";
-            
+            $sql2= "SELECT * FROM quizzutilisateur WHERE IdUtilisateur= :id ";
+            $statement= $bdd->prepare($sql2);
+            $statement->bindValue(':id', $id);
+            $statement->execute();
+            $quizz =$statement ->fetchAll(PDO::FETCH_ASSOC);
+            var_dump($quizz);
+            if(count($quizz)) {
+                foreach ($quizz as $el) {
+                    print("Vous avez obtenu: ".$el["Score"]. " points, le ". $el["StartTime"].". Sujet du quizz: ". $el["IdSujet"]."." );
+                }
+            }else {
+                print("Vous avez pas encore effectué des test!");
+            }
         }
         else{
             echo "Vous devez vous s'inscrire!";
