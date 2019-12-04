@@ -1,4 +1,37 @@
-
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <link rel="stylesheet" href="./style.css">
+    <body>
+        <header class="header">InterQuizz</header>
+        <nav id="navbar" class="navbar">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+                <ul class="list-inline">
+                <li>
+                    <a href="./index.php"><strong><span>Home</span></strong></a>
+                </li>    
+                <li>
+                    <a href="./quizz.php"><strong><span>Quizz</span></strong></a>
+                </li>
+                 <li>
+                     <a href="./login.php"><strong><span>Mon compte</span></strong></a>
+                </li>
+                 <li>
+                     <a href="./formulaire.php"><strong><span>Ajouter question</span></strong></a>
+                </li>
+              </ul>
+          </div>
+        </div>
+       </div>     
+      </nav>
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
         <?php
         
           try{
@@ -15,15 +48,12 @@
         
        
         $sujet = $_POST['Sujet'];
-        var_dump($sujet);
         $question = $_POST['TextQuestion'];
-        var_dump($question);
         $reponse1 = $_POST['reponse1'];
         $reponse2 = $_POST['reponse2'];
         $reponse3 = $_POST['reponse3'];
-        var_dump($reponse1, $reponse2,$reponse3);
         $reponseVrai = $_POST['inputAnswer'];
-        var_dump($reponseVrai);
+
         
         
         $sql = "INSERT INTO Question (IdSujet, TextQuestion) VALUES  (:Sujet, :TextQuestion)";
@@ -34,14 +64,11 @@
         
         
         if($statement->execute()){
-            echo"Insertion correcte";
+            echo"<h3>Merci d'avoir ajouter une nouvelle question.</h3>";
             $last_id = $bdd->lastInsertId();
-            var_dump($last_id);
         }
         else{
             echo "Probleme!";
-            var_dump ($bdd->errorInfo());
-            var_dump($statement->errorInfo());
         }    
 //       
         
@@ -49,7 +76,6 @@
         $vrai1 = $reponseVrai == "1"? "Vrai": "Faux";
         $vrai2 = $reponseVrai == "2"? "Vrai": "Faux";
         $vrai3 = $reponseVrai == "3"? "Vrai": "Faux";
-        var_dump($vrai1, $vrai2, $vrai3);
         
         $sql2 = "INSERT INTO Reponse (IdQuestion, TextReponse, Vrai) VALUES  (:IdQuestion,:reponse1, :vrai1), (:IdQuestion,:reponse2,:vrai2), (:IdQuestion,:reponse3,:vrai3)";
 
@@ -63,16 +89,17 @@
         $statement2->bindValue(":vrai3", $vrai3);
         
         if($statement2->execute()){
-            echo"Insertion correcte";
         }
         else{
             echo "Probleme!";
-            var_dump ($bdd->errorInfo());
-            var_dump($statement->errorInfo());
         }    
         
    
         ?>
+          </div>
+                </div>
+            </div> 
+        </main>
     </body>
 </html>
 

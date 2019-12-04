@@ -12,7 +12,7 @@
             <div class="col">
                 <ul class="list-inline">
                 <li>
-                    <a href="./index<.php"><strong><span>Home</span></strong></a>
+                    <a href="./index.php"><strong><span>Home</span></strong></a>
                 </li>
                 <li>
                     <a href="./quizz.php"><strong><span>Quizz</span></strong></a>

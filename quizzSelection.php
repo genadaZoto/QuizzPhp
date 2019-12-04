@@ -12,7 +12,7 @@
             <div class="col">
                 <ul class="list-inline">
                 <li>
-                    <a href="./index<.php"><strong><span>Home</span></strong></a>
+                    <a href="./index.php"><strong><span>Home</span></strong></a>
                 </li>
                 <li>
                     <a href="./quizz.php"><strong><span>Quizz</span></strong></a>
@@ -87,11 +87,11 @@
                
               foreach($reponse as $rep) {
                   $value = $rep['Vrai']=="Vrai"? 1:0;
-                  print("<p><input type='radio'  name=Q".$rep['IdQuestion']." value=".$value."><li>".$rep['TextReponse']."</li>");
+                  print("<p><input type='radio'  name=Q".$rep['IdQuestion']." value=".$value."><label>".$rep['TextReponse']."</label>");
               }
            }
        }
-       print("<button type='submit'>Submit</button>");
+       print("<br><button type='submit'>Submit</button>");
        print("</form>");
        
        

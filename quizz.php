@@ -12,7 +12,7 @@
             <div class="col">
                 <ul class="list-inline">
                 <li>
-                    <a href="./index<.php"><strong><span>Home</span></strong></a>
+                    <a href="./index.php"><strong><span>Home</span></strong></a>
                 </li>
                 <li>
                     <a href="./quizz.php"><strong><span>Quizz</span></strong></a>
@@ -33,7 +33,7 @@
                 <div class="row">
                     <div class="col">
                         <form action="./quizzSelection.php" method="POST">
-                            <label>Choisissez le quizz:</label>
+                            <label><h3>Choisissez le quizz:</h3></label>
                             <select name="choix">
                                 <label><option value="1">Js</option></label>
                                 <label><option value="2">PHP</option></label>

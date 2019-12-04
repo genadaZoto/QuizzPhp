@@ -27,7 +27,8 @@ session_start();
         $email = $_POST['email'];
         $password = $_POST['password'];
         
-        $sql="INSERT INTO utilisateur (nom, prenom, email, password) VALUES(:nom, :prenom, :email, :password)";
+        if( isset($nom, $prenom, $email, $password)){
+            $sql="INSERT INTO utilisateur (nom, prenom, email, password) VALUES(:nom, :prenom, :email, :password)";
         $statement= $bdd->prepare($sql);
         $statement->bindValue(':nom', $nom);
         $statement->bindValue(':prenom', $prenom);
@@ -46,6 +47,10 @@ session_start();
         $last_id = $bdd->lastInsertId();
         $_SESSION["idUtilistaeur"]=$last_id;
             
+        }else{
+            echo("Vous devez remplir tous les champs!");
+        }
+        
         
         
           

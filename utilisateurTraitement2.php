@@ -18,7 +18,7 @@ and open the template in the editor.
             <div class="col">
                 <ul class="list-inline">
                 <li>
-                    <a href="./index<.php"><strong><span>Home</span></strong></a>
+                    <a href="./index.php"><strong><span>Home</span></strong></a>
                 </li>
                 <li>
                     <a href="./quizz.php"><strong><span>Quizz</span></strong></a>
@@ -72,10 +72,10 @@ and open the template in the editor.
             $statement->bindValue(':id', $id);
             $statement->execute();
             $quizz =$statement ->fetchAll(PDO::FETCH_ASSOC);
-            var_dump($quizz);
             if(count($quizz)) {
                 foreach ($quizz as $el) {
-                    print("Vous avez obtenu: ".$el["Score"]. " points, le ". $el["StartTime"].". Sujet du quizz: ". $el["IdSujet"]."." );
+                    $sujet = $el["IdSujet"]== "1"? "Javascript":"PHP";
+                    print("Vous avez obtenu: ".$el["Score"]. " points, le ". $el["StartTime"].". Sujet du quizz: ". $sujet."." );
                 }
             }else {
                 print("Vous avez pas encore effectué des test!");
