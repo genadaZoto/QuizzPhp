@@ -6,23 +6,14 @@
     <link rel="stylesheet" href="./style.css">
     <body>
         
-        <div id="mySidenav" class="sidenav">
+        <div id="mySidenav" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="./index.php"><strong><span>Home</span></strong></a>
             <a href="./quizz.php"><strong><span>Quizz</span></strong></a>
             <a href="./login.php"><strong><span>Mon compte</span></strong></a>
             <a href="./formulaire.php"><strong><span>Ajouter question</span></strong></a>   
       </div>
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-      <script>
-        function openNav() {
-          document.getElementById("mySidenav").style.width = "250px";
-        }
-
-        function closeNav() {
-          document.getElementById("mySidenav").style.width = "0";
-        }
-    </script>
+     
         <main>
             <div class="container">
                 <div class="row">
