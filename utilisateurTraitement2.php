@@ -83,8 +83,8 @@ and open the template in the editor.
         }
         else{
             echo "Vous devez vous s'inscrire!";
-            var_dump ($bdd->errorInfo());
-            var_dump($statement->errorInfo());
+//            var_dump ($bdd->errorInfo());
+//            var_dump($statement->errorInfo());
         }    
 
         ?>

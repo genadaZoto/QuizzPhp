@@ -89,6 +89,7 @@
         $statement2->bindValue(":vrai3", $vrai3);
         
         if($statement2->execute()){
+            
         }
         else{
             echo "Probleme!";
@@ -96,7 +97,7 @@
         
    
         ?>
-          </div>
+                    </div>
                 </div>
             </div> 
         </main>

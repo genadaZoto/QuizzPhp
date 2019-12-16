@@ -5,29 +5,24 @@
     </head>
     <link rel="stylesheet" href="./style.css">
     <body>
-        <header class="header">InterQuizz</header>
-        <nav id="navbar" class="navbar">
-        <div class="container">
-          <div class="row">
-            <div class="col">
-                <ul class="list-inline">
-                <li>
-                    <a href="./index.php"><strong><span>Home</span></strong></a>
-                </li>
-                <li>
-                    <a href="./quizz.php"><strong><span>Quizz</span></strong></a>
-                </li>
-                 <li>
-                     <a href="./login.php"><strong><span>Mon compte</span></strong></a>
-                </li>
-                 <li>
-                     <a href="./formulaire.php"><strong><span>Ajouter question</span></strong></a>
-                </li>
-              </ul>
-          </div>
-        </div>
-       </div>     
-      </nav>
+        
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="./index.php"><strong><span>Home</span></strong></a>
+            <a href="./quizz.php"><strong><span>Quizz</span></strong></a>
+            <a href="./login.php"><strong><span>Mon compte</span></strong></a>
+            <a href="./formulaire.php"><strong><span>Ajouter question</span></strong></a>   
+      </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+      <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
         <main>
             <div class="container">
                 <div class="row">

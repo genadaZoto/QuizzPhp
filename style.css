@@ -2,18 +2,59 @@
 body{
     margin:0;
     padding:0;
-    background-image: linear-gradient(to bottom, rgba(250, 250,250, 0.9) 0%,rgba(0, 0, 0, 0.13) 100%), url(flower.jpg);
+    background-image: linear-gradient(to bottom, rgba(250, 250,250, 0.9) 0%,rgba(0, 0, 0, 0.13) 100%), url(quizz.jpg);
 }
 * {
     box-sizing: border-box;
 }
-header{
-    height:20%;
-    background-color: black;
-    color:red;
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
     text-align: center;
-    font-size: 200%;
-    padding-top:5%;
+    float: none;
+  }
 }
 .container{
   display:flex;

@@ -16,9 +16,6 @@ session_start();
         }
         catch(Exeption $e){
                 echo $e->getMessage();
-//                var_dump($e);
-//                  header();
-//                  die();
         }
         // pour le enregistrement
         session_start();
@@ -45,9 +42,9 @@ session_start();
         }
         
         $last_id = $bdd->lastInsertId();
-        $_SESSION["idUtilistaeur"]=$last_id;
-            
-        }else{
+        $_SESSION["idUtilistaeur"]=$last_id;  
+        }
+        else{
             echo("Vous devez remplir tous les champs!");
         }
         
