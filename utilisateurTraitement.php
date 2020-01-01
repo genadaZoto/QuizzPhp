@@ -19,6 +19,7 @@ session_start();
         }
         // pour le enregistrement
         session_start();
+        $errors = array(); 
         $nom = $_POST['nom'];
         $prenom = $_POST['prenom'];
         $email = $_POST['email'];
@@ -33,16 +34,16 @@ session_start();
         $statement->bindValue(':password', $password);
         
         
-        if($statement->execute()){
-            echo"Votre inscription c'est effectue correctement! Choisissez votre quizz."; 
-            header("location:./quizz.php");  
-        }
-        else{
-            echo"Il y a eu un probleme!";  
-        }
+            if($statement->execute()){
+                echo"Votre inscription c'est effectue correctement! Choisissez votre quizz."; 
+                header("location:./quizz.php");  
+            }
+            else{
+                echo"Il y a eu un probleme!";  
+            }
         
         $last_id = $bdd->lastInsertId();
-        $_SESSION["idUtilistaeur"]=$last_id;  
+        $_SESSION["idUtilisateur"]=$last_id;
         }
         else{
             echo("Vous devez remplir tous les champs!");

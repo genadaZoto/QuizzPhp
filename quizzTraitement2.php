@@ -4,30 +4,15 @@
         <title></title>
     </head>
     <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Shadows+Into+Light&display=swap" rel="stylesheet">
     <body>
-        <header class="header">InterQuizz</header>
-        <nav id="navbar" class="navbar">
-        <div class="container">
-          <div class="row">
-            <div class="col">
-                <ul class="list-inline">
-                <li>
-                    <a href="./index.php"><strong><span>Home</span></strong></a>
-                </li>
-                <li>
-                    <a href="./quizz.php"><strong><span>Quizz</span></strong></a>
-                </li>
-                 <li>
-                     <a href="./login.php"><strong><span>Mon compte</span></strong></a>
-                </li>
-                 <li>
-                     <a href="./formulaire.php"><strong><span>Ajouter question</span></strong></a>
-                </li>
-              </ul>
-          </div>
+       <div id="mySidenav" class="sidebar">
+            <span class="interquizz">InterQuizz</span>
+            <a href="./index.php"><strong><span>Home</span></strong></a>
+            <a href="./quizz.php"><strong><span>Quizz</span></strong></a>
+            <a href="./login.php"><strong><span>Mon compte</span></strong></a>
+            <a href="./formulaire.php"><strong><span>Ajouter question</span></strong></a>   
         </div>
-       </div>     
-      </nav>
         <main>
             <div class="container">
                 <div class="row">
@@ -73,18 +58,18 @@
         
         $score= 0;
         foreach($question as $el) {
-            $score +=$_POST["Q".$el['Id']];
+            $score += $_POST["Q".$el['Id']];
         }
         
-        echo ("<h3>Vous avez eu: ").$score.(" points.</h3>");
+        echo ('<form><h2>Vous avez ').$score.(" reponse exact.</h2></form>");
         
         //insertion des données dans la table quizzUtilisateur
-        $idUtilisateur = $_SESSION["idUtilistaeur"];
+        $idUtilisateur = $_SESSION["idUtilisateur"];
         $time = date("Y-m-d H:i:s");
 
         
         $sql3 = "INSERT INTO quizzutilisateur(Score, StartTime, IdUtilisateur, IdSujet) VALUES (:score, :time, :idUtilisateur, :sujet)";
-        $statement= $bdd->prepare($sql3);
+        $statement = $bdd->prepare($sql3);
         $statement->bindValue(':score', $score);
         $statement->bindValue(':time', $time);
         $statement->bindValue(':idUtilisateur', $idUtilisateur);

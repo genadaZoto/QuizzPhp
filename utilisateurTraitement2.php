@@ -10,30 +10,15 @@ and open the template in the editor.
         <title></title>
     </head>
     <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Shadows+Into+Light&display=swap" rel="stylesheet">
     <body>
-        <header class="header">InterQuizz</header>
-        <nav id="navbar" class="navbar">
-        <div class="container">
-          <div class="row">
-            <div class="col">
-                <ul class="list-inline">
-                <li>
-                    <a href="./index.php"><strong><span>Home</span></strong></a>
-                </li>
-                <li>
-                    <a href="./quizz.php"><strong><span>Quizz</span></strong></a>
-                </li>
-                 <li>
-                     <a href="./login.php"><strong><span>Mon compte</span></strong></a>
-                </li>
-                 <li>
-                     <a href="./formulaire.php"><strong><span>Ajouter question</span></strong></a>
-                </li>
-              </ul>
-          </div>
+        <div id="mySidenav" class="sidebar">
+            <span class="interquizz">InterQuizz</span>
+            <a href="./index.php"><strong><span>Home</span></strong></a>
+            <a href="./quizz.php"><strong><span>Quizz</span></strong></a>
+            <a href="./login.php"><strong><span>Mon compte</span></strong></a>
+            <a href="./formulaire.php"><strong><span>Ajouter question</span></strong></a>   
         </div>
-       </div>     
-      </nav>
         <main>
             <div class="container">
                 <div class="row">
@@ -66,7 +51,7 @@ and open the template in the editor.
         if($statement->execute()){
             $tableau =$statement ->fetchAll(PDO::FETCH_ASSOC);
             $id = $tableau[0]["ID"];
-            echo " Bonjour " . $nom2."! ";
+            echo "<h3> Bonjour " . $nom2."!</h3></br> ";
             $sql2= "SELECT * FROM quizzutilisateur WHERE IdUtilisateur= :id ";
             $statement= $bdd->prepare($sql2);
             $statement->bindValue(':id', $id);
@@ -75,7 +60,7 @@ and open the template in the editor.
             if(count($quizz)) {
                 foreach ($quizz as $el) {
                     $sujet = $el["IdSujet"]== "1"? "Javascript":"PHP";
-                    print("Vous avez obtenu: ".$el["Score"]. " points, le ". $el["StartTime"].". Sujet du quizz: ". $sujet."." );
+                    print("<ul> Vous avez obtenu: ".$el["Score"]. " points, le ". $el["StartTime"].". Sujet du quizz: ". $sujet.".</ul>" );
                 }
             }else {
                 print("Vous avez pas encore effectué des test!");
